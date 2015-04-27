@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    tools:context=".MainActivity">
+
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/ListView_Main"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+
+    <ImageButton
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Button_AddMoive"
+        android:background="@drawable/animatiom_press"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/ListView_Main"
+        android:layout_alignEnd="@+id/ListView_Main"
+        android:layout_marginRight="3dp"
+        android:layout_marginBottom="5dp" />
+
+</RelativeLayout>

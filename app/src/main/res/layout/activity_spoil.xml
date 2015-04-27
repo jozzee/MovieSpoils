@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_5dp"
+    tools:context="com.example.jozzee.moivespoils.SpoilActivity">
+
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView_Spoil"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="60dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="spoil"
+        android:id="@+id/Button_Spoil"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/listView_Spoil"
+        android:layout_alignEnd="@+id/listView_Spoil"
+        android:textSize="20dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginBottom="3dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/EditText_AddSpoil"
+        android:textSize="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/Button_Spoil"
+        android:layout_toStartOf="@+id/Button_Spoil"
+        android:layout_marginLeft="3dp"
+        android:layout_marginBottom="3dp" />
+
+
+</RelativeLayout>

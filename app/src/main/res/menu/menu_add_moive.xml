@@ -1,0 +1,8 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.jozzee.moivespoils.AddMoiveActivity">
+    <!-- เพิ่มคำว่า About ในตรงเมนู ในหน้าเมนูบน Actionbar-->
+    <item android:id="@+id/action_About" android:title="@string/action_About"
+        android:orderInCategory="100" app:showAsAction="never" />
+</menu>

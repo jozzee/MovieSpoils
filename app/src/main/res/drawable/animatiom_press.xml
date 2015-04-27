@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- เพื่อการตั้งค่าการกดปุ่ม
+        ปกติ จะแสดง  Icon  button_add แต่เมื่อกดปุ่มจะแสดง Icon button_add_press แทน -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="false"
+        android:drawable="@drawable/button_add" />
+    <item android:state_pressed="true"
+        android:drawable="@drawable/button_add_press" />
+</selector>
