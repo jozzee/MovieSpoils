@@ -4,7 +4,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingBottom="@dimen/activity_5dp"
-    tools:context="com.example.jozzee.moivespoils.SpoilActivity">
+    tools:context="com.example.jozzee.moviespoils.SpoilActivity">
 
     <ListView
         android:layout_width="fill_parent"

@@ -5,7 +5,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_5dp"
-    tools:context="com.example.jozzee.moivespoils.AddMoiveActivity">
+    tools:context="com.example.jozzee.moviespoils.AddMovieActivity">
 
     <LinearLayout
         android:orientation="vertical"

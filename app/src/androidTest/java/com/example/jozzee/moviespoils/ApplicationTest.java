@@ -1,4 +1,4 @@
-package com.example.jozzee.moivespoils;
+package com.example.jozzee.moviespoils;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

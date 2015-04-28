@@ -1,10 +1,8 @@
-package com.example.jozzee.moivespoils;
+package com.example.jozzee.moviespoils;
 
 import android.content.Intent;
 import android.os.StrictMode;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,14 +11,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-public class AddMoiveActivity extends MainActivity {
+public class AddMovieActivity extends MainActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().setTitle("Add Moive");//ใช้สำหรับ set ชื่อ title ที่จะแสดงบน Action bar
+        getSupportActionBar().setTitle("Add Movie");//ใช้สำหรับ set ชื่อ title ที่จะแสดงบน Action bar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); //เปิดปุ่ม back บน Action bar
-        setContentView(R.layout.activity_add_moive);
+        setContentView(R.layout.activity_add_movie);
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build(); //ทำให้ใช้งาน Internet  ได้
         StrictMode.setThreadPolicy(policy);
@@ -57,7 +55,7 @@ public class AddMoiveActivity extends MainActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_add_moive, menu);
+        getMenuInflater().inflate(R.menu.menu_add_movie, menu);
         return true;
     }
 

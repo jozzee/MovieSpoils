@@ -1,16 +1,14 @@
-package com.example.jozzee.moivespoils;
+package com.example.jozzee.moviespoils;
 
 import android.content.Intent;
 import android.os.StrictMode;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -40,7 +38,7 @@ public class MainActivity extends ActionBarActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().setTitle("All Moives"); //ใช้สำหรับ set ชื่อ title ที่จะแสดงบน Action bar
+        getSupportActionBar().setTitle("All Movies"); //ใช้สำหรับ set ชื่อ title ที่จะแสดงบน Action bar
         setContentView(R.layout.activity_main);
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build(); //ทำให้ใช้งาน Internet  ได้
@@ -71,7 +69,7 @@ public class MainActivity extends ActionBarActivity{
         AddMoive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent AddMoive = new Intent(v.getContext(), AddMoiveActivity.class);
+                Intent AddMoive = new Intent(v.getContext(), AddMovieActivity.class);
                 startActivity(AddMoive);//ไปที่ classAddMoive
             }
         });
