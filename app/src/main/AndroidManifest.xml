@@ -26,6 +26,10 @@
             android:name=".SpoilActivity"
             android:label="@string/title_activity_spoil" >
         </activity>
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/title_activity_about" >
+        </activity>
     </application>
 
 </manifest>

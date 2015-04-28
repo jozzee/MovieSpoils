@@ -6,4 +6,5 @@
     <string name="action_About">About</string>
     <string name="title_activity_add_moive">AddMoive</string>
     <string name="title_activity_spoil">SpoilActivity</string>
+    <string name="title_activity_about">AboutActivity</string>
 </resources>

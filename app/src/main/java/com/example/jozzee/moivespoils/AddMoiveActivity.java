@@ -1,8 +1,10 @@
 package com.example.jozzee.moivespoils;
 
+import android.content.Intent;
 import android.os.StrictMode;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -37,8 +39,10 @@ public class AddMoiveActivity extends MainActivity {
 
                     String NameMoive_forUp = EncodeData(ENcodeData_Space(NameMoive.getText().toString().trim()));
                     String SpoilMoive_forUp = EncodeData(ENcodeData_Space(SpoilMoive.getText().toString().trim()));
-                    String URL_forlistNameMoive ="http://www.fbcredibility.com/cloudobject/usg03/insert/New_Name_Moive?name="+NameMoive_forUp;
-                    String URL_forCreatObjectStoreSpoil ="http://www.fbcredibility.com/cloudobject/usg03/insert/" +NameMoive_forUp +"?spoil=" +SpoilMoive_forUp;
+                    String ID = getID("http://www.fbcredibility.com/cloudobject/usg03/find/NewMoviess");
+                    String URL_forlistNameMoive ="http://www.fbcredibility.com/cloudobject/usg03/insert/NewMoviess?ID="+ID+"&name="+NameMoive_forUp;
+                    String URL_forCreatObjectStoreSpoil ="http://www.fbcredibility.com/cloudobject/usg03/insert/" +ID +"?spoil=" +SpoilMoive_forUp;
+
                     UpDataToJSON(URL_forlistNameMoive);
                     UpDataToJSON(URL_forCreatObjectStoreSpoil);
                     Toast.makeText(getApplicationContext(), "Add successfully", Toast.LENGTH_SHORT).show();
@@ -69,9 +73,9 @@ public class AddMoiveActivity extends MainActivity {
         //    return true;
         //}
         if(id == R.id.action_About){ //เมื่อกดปุ่ม about จะโชว์หน้า รายชื่อสมาชิกกลุ่ม
-            //Intent about = new Intent(this,AboutActivity.class);
-            ////Start Product Activity
-            //startActivity(about);
+            Intent about = new Intent(this,AboutActivity.class);
+            //Start Product Activity
+            startActivity(about);
             return true;
         }
         switch (item.getItemId()){//เมื่อกดปุ่ม Back บน Action bar

@@ -36,7 +36,7 @@ import java.util.Scanner;
 public class MainActivity extends ActionBarActivity{
 
     static String NameMoive_forpageSpoil;
-
+    static String NID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,16 +49,18 @@ public class MainActivity extends ActionBarActivity{
         final ListView listview_Main =(ListView)findViewById(R.id.ListView_Main);
         ArrayList<String> listdata_Main = new ArrayList<String>(); // สร้าง ArrayList เพื่อดึงข้องมูลจาก JSON มาเก็บไว้(โปรเจ็คนี้ JSON ส่งข้อมูลมาเป็นอาเรย์)
 
-        String URL_Main = "http://www.fbcredibility.com/cloudobject/usg03/find/New_Name_Moive";
+        String URL_Main = "http://www.fbcredibility.com/cloudobject/usg03/find/NewMoviess";
         //URL ที่จะดีงข้อมูล รายชื่อหนัง มาแสดง
 
         getDataFromJSON(URL_Main,"name",listdata_Main); //funtion ดึงข้อมู๔ลจาก JSON มาเก็บไว้ใน ArrayList
         setLisView(listdata_Main,listview_Main); //Funtion setListView ให้แสดงผล
 
+
         listview_Main.setOnItemClickListener(new AdapterView.OnItemClickListener() { //เมื่อมีการคลิก ไอเทม (ข้อมูล) บน ListView
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 NameMoive_forpageSpoil = EncodeData(ENcodeData_Space((listview_Main.getItemAtPosition(position).toString().trim())));
+                NID = String.valueOf(position+1);
                 //เป็นการ กำหนดค่าตัวแปร ตาม ไอเท็มที่คลิกบน ListView ในขนะนั้น เพื่อนำไปใช้ใน Spoilclass
                 Intent Spoil = new Intent(view.getContext(),SpoilActivity.class);
                 startActivity(Spoil);  //ไปที่ classSpoil
@@ -95,9 +97,9 @@ public class MainActivity extends ActionBarActivity{
         //    return true;
         // }
         if(id == R.id.action_About){ //เมื่อกดปุ่ม about จะโชว์หน้า รายชื่อสมาชิกกลุ่ม
-            //Intent about = new Intent(this,AboutActivity.class);
-            ////Start Product Activity
-            //startActivity(about);
+            Intent about = new Intent(this,AboutActivity.class);
+            //Start Product Activity
+            startActivity(about);
             return true;
         }
 
@@ -146,6 +148,28 @@ public class MainActivity extends ActionBarActivity{
             e.printStackTrace();
         }
 
+    }
+    protected String getID(String Ram_URL){
+        String id = null;
+        try{
+            URL url = new URL(Ram_URL);
+            Scanner scan = new Scanner(url.openStream());
+            StringBuffer Buf = new StringBuffer();
+            while (scan.hasNext()){
+                Buf.append(scan.next());
+            }
+            JSONObject json = new JSONObject(Buf.toString()); //สร้าง JSONObject
+            JSONArray ArrayData = json.getJSONArray("data"); //ใช้ JOSONArray ดึงข้อลูล อาเรย์มา
+            id = String.valueOf(ArrayData.length()+1);
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return id;
     }
     protected void UpDataToJSON(String UP_URL){ //function สำหรับ ส่งข้อมูลขึ้น sever
         try{

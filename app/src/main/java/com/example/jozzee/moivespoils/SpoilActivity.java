@@ -1,8 +1,10 @@
 package com.example.jozzee.moivespoils;
 
+import android.content.Intent;
 import android.os.StrictMode;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,9 +32,11 @@ public class SpoilActivity extends MainActivity {
 
         final ListView listview_Spoil =(ListView)findViewById(R.id.listView_Spoil);
         ArrayList<String> listdata_Spoil = new ArrayList<String>(); // สร้าง ArrayList เพื่อดึงข้องมูลจาก JSON มาเก็บไว้(โปรเจ็คนี้ JSON ส่งข้อมูลมาเป็นอาเรย์)
-        String URL_Spoil = "http://www.fbcredibility.com/cloudobject/usg03/find/"+MainActivity.NameMoive_forpageSpoil;
 
-        getDataFromJSON(URL_Spoil, "spoil",listdata_Spoil); //funtion ดึงข้อมู๔ลจาก JSON มาเก็บไว้ใน ArrayList
+        String URL_Spoil = "http://www.fbcredibility.com/cloudobject/usg03/find/"+MainActivity.NID;
+
+
+        getDataFromJSON(URL_Spoil, "spoil", listdata_Spoil); //funtion ดึงข้อมู๔ลจาก JSON มาเก็บไว้ใน ArrayList
         setLisView(listdata_Spoil,listview_Spoil); //Funtion setListView ให้แสดงผล
 
         Button Button_Spoil =(Button)findViewById(R.id.Button_Spoil);
@@ -46,7 +50,10 @@ public class SpoilActivity extends MainActivity {
                 else{
 
                     String forAddSpoil = EncodeData(ENcodeData_Space(EditText_AddSpoil.getText().toString().trim()));
-                    String URL_forAddSpoil ="http://www.fbcredibility.com/cloudobject/usg03/insert/"+NameMoive_forpageSpoil+"?spoil=" +forAddSpoil;
+                    String ObjectSpol =EncodeData(ENcodeData_Space(MainActivity.NameMoive_forpageSpoil));
+
+
+                    String URL_forAddSpoil ="http://www.fbcredibility.com/cloudobject/usg03/insert/"+MainActivity.NID+"?spoil=" +forAddSpoil;
                     UpDataToJSON(URL_forAddSpoil);
                     Toast.makeText(getApplicationContext(), "Add successfully", Toast.LENGTH_SHORT).show();
                     refresh();
@@ -76,9 +83,9 @@ public class SpoilActivity extends MainActivity {
         //    return true;
         //}
         if(id == R.id.action_About){ //เมื่อกดปุ่ม about จะโชว์หน้า รายชื่อสมาชิกกลุ่ม
-            //Intent about = new Intent(this,AboutActivity.class);
-            ////Start Product Activity
-            //startActivity(about);
+            Intent about = new Intent(this,AboutActivity.class);
+            //Start Product Activity
+            startActivity(about);
             return true;
         }
         switch (item.getItemId()){//เมื่อกดปุ่ม Back บน Action bar
