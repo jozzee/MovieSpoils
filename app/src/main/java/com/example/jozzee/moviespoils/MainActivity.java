@@ -47,7 +47,7 @@ public class MainActivity extends ActionBarActivity{
         final ListView listview_Main =(ListView)findViewById(R.id.ListView_Main);
         ArrayList<String> listdata_Main = new ArrayList<String>(); // สร้าง ArrayList เพื่อดึงข้องมูลจาก JSON มาเก็บไว้(โปรเจ็คนี้ JSON ส่งข้อมูลมาเป็นอาเรย์)
 
-        String URL_Main = "http://www.fbcredibility.com/cloudobject/usg03/find/NewMoviess";
+        String URL_Main = "http://www.fbcredibility.com/cloudobject/usg03/find/Nmovie";
         //URL ที่จะดีงข้อมูล รายชื่อหนัง มาแสดง
 
         getDataFromJSON(URL_Main,"name",listdata_Main); //funtion ดึงข้อมู๔ลจาก JSON มาเก็บไว้ใน ArrayList

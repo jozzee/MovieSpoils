@@ -37,8 +37,8 @@ public class AddMovieActivity extends MainActivity {
 
                     String NameMoive_forUp = EncodeData(ENcodeData_Space(NameMoive.getText().toString().trim()));
                     String SpoilMoive_forUp = EncodeData(ENcodeData_Space(SpoilMoive.getText().toString().trim()));
-                    String ID = getID("http://www.fbcredibility.com/cloudobject/usg03/find/NewMoviess");
-                    String URL_forlistNameMoive ="http://www.fbcredibility.com/cloudobject/usg03/insert/NewMoviess?ID="+ID+"&name="+NameMoive_forUp;
+                    String ID = getID("http://www.fbcredibility.com/cloudobject/usg03/find/Nmovie");
+                    String URL_forlistNameMoive ="http://www.fbcredibility.com/cloudobject/usg03/insert/Nmovie?ID="+ID+"&name="+NameMoive_forUp;
                     String URL_forCreatObjectStoreSpoil ="http://www.fbcredibility.com/cloudobject/usg03/insert/" +ID +"?spoil=" +SpoilMoive_forUp;
 
                     UpDataToJSON(URL_forlistNameMoive);
